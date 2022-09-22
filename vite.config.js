@@ -3,8 +3,8 @@ import path from "path";
 import glob from "glob";
 
 export default defineConfig({
+  root: "src",
   build: {
-    root: "src",
     target: "es2017",
     outDir: path.join(__dirname, "dist"),
     rollupOptions: {

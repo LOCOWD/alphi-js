@@ -10,18 +10,18 @@ AlphiJS was inspired by [![javascript logo](https://api.iconify.design/logos:nux
 
 ## Table of contents
 
-- [⚡️ Included Tools](#-included-tools)
+- [⚡️ Included Tools](#%EF%B8%8F-included-tools)
 - [🛠 Setup](#-setup)
 - [🎮 Quick start](#-quick-start)
 - [🏗 Build](#-build)
 
-  - [Development](#-development)
-  - [Production](#-production)
+  - [Development](#development)
+  - [Production](#production)
 
 - [![javascript logo](https://api.iconify.design/logos:javascript.svg) Serve JavaScript files](#-serve-javascript-files)
-  - [Localhost](#-localhost)
-  - [CodeSandbox](#-codesandbox)
-- [🏝 Index.html](#-index-html)
+  - [Localhost](#localhost)
+  - [CodeSandbox](#codesandbox)
+- [🏝 Index.html](#-indexhtml)
 - [💝 Special Thanks](#-special-thanks)
 
 ## ⚡️ Included Tools

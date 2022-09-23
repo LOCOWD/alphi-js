@@ -95,7 +95,7 @@ const updateTodo = async (todo) => {
 
 // callback function which is passed to the WebflowFormComponent
 const addTodo = async (todo) => {
-  var value = store.fields.title && store.fields.title.trim();
+  let value = store.fields.title && store.fields.title.trim();
   if (!value) {
     return;
   }

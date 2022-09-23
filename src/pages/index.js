@@ -100,13 +100,13 @@ const addTodo = async (todo) => {
     return;
   }
 
-  // spoof the id as the example api allways returns id=201
+  // spoof the id as the example api always returns id=201
   todo.id = store.fields.id++;
 
   // reset the title input
   store.fields.title = "";
 
-  // addend the todo to the store
+  // add the todo to the store
   store.todos.push(todo);
 };
 

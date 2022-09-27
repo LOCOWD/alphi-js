@@ -6,7 +6,7 @@ AlphiJS allows you to decouple your JavaScript logic from your frontend page bui
 
 AlphiJS was inspired by [![javascript logo](https://api.iconify.design/logos:nuxt.svg)](https://v3.nuxtjs.org/) 😍
 
-[![Edit alphi-js](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/alphi-js-oc7sch?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit alphi-js](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LOCOWD/alphi-js/tree/main/?fontsize=14&hidenavigation=1&theme=dark)
 
 ## Table of contents
 
@@ -40,7 +40,7 @@ AlphiJS was inspired by [![javascript logo](https://api.iconify.design/logos:nux
 
 The fastest way to set up an environment is to open the template in CodeSandbox.
 
-[![Edit alphi-js](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/alphi-js-oc7sch?fontsize=14&hidenavigation=1&theme=dark)
+[![Edit alphi-js](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/LOCOWD/alphi-js/tree/main/?fontsize=14&hidenavigation=1&theme=dark)
 
 Alternatively, you can clone the repository.
 

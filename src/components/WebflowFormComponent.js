@@ -3,7 +3,7 @@ import { $fetch } from "ohmyfetch";
 const statusEnum = Object.freeze({
   idle: 0,
   error: 1,
-  success: 2
+  success: 2,
 });
 
 export function WebflowFormComponent(props) {
@@ -52,7 +52,7 @@ export function WebflowFormComponent(props) {
       // post the form data to the demo api
       const response = await $fetch(this.actionUrl, {
         method: "POST",
-        body: props.fields
+        body: props.fields,
       }).catch((error) => {
         this.status = statusEnum.error;
         throw Error(error);
@@ -70,6 +70,6 @@ export function WebflowFormComponent(props) {
 
       // update the status
       this.status = statusEnum.success;
-    }
+    },
   };
 }

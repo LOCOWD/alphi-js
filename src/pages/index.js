@@ -10,8 +10,8 @@ const store = reactive({
   fields: {
     id: 201,
     title: "",
-    completed: false
-  }
+    completed: false,
+  },
 });
 
 const mounted = async () => {
@@ -29,12 +29,12 @@ const fetchTodos = async () => {
   // define the endpoint url & query parameters
   const endpointUrl = "https://jsonplaceholder.typicode.com/todos/";
   const queryParams = {
-    _limit: 5
+    _limit: 5,
   };
 
   // fetch the todos using ohmyfetch
   const todos = await $fetch(endpointUrl, {
-    query: queryParams
+    query: queryParams,
   }).catch((error) => {
     this.isError = false;
     throw Error(error);
@@ -61,7 +61,7 @@ const filters = {
     return todos.filter(function (todo) {
       return todo.completed;
     });
-  }
+  },
 };
 
 // update all todos completed status
@@ -79,8 +79,8 @@ const updateTodo = async (todo) => {
   const updatedTodo = await $fetch(endpointUrl + todo.id, {
     method: "PATCH",
     body: {
-      completed: todo.completed
-    }
+      completed: todo.completed,
+    },
   }).catch((error) => {
     this.isError = false;
     throw Error(error);
@@ -134,7 +134,7 @@ const app = createApp({
   },
   get pluralize() {
     return this.remaining === 1 ? "item" : "items";
-  }
+  },
 });
 
 export { app };

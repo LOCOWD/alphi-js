@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --emptyOutDir",
-    "preview": "vite preview"
+    "build": "node ./bin/build.js",
+    "preview": "vite preview",
     "lint": "eslint --ext .js --ignore-path .gitignore --fix ./src",
     "format": "prettier --write ./src"
   },

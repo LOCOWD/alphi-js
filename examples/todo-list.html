@@ -129,17 +129,26 @@
                   </table>
 
                   <!-- loading -->
-                  <div v-show="store.isLoading" class="p-4 text-center">
+                  <div v-show="isFetching" class="p-4 text-center">
                     <span> Loading </span>
                   </div>
 
                   <!-- no results -->
                   <div
-                    v-show="!filteredTodos.length && !store.isLoading"
+                    v-show="!filteredTodos.length && isIdle"
                     class="p-4 text-center"
                     v-cloak="hidden"
                   >
                     <span> No todos </span>
+                  </div>
+
+                  <!-- error -->
+                  <div
+                    v-show="isError"
+                    class="p-4 text-center"
+                    v-cloak="hidden"
+                  >
+                    <span> An error occurred. </span>
                   </div>
                 </div>
               </div>

@@ -2,9 +2,16 @@ import { $fetch } from "ohmyfetch";
 import { createApp, reactive } from "petite-vue";
 import { WebflowFormComponent } from "../components/WebflowFormComponent";
 
+const statusEnum = Object.freeze({
+  idle: 0,
+  fetching: 1,
+  updating: 2,
+  error: 3,
+});
+
 // define the reactive store
 const store = reactive({
-  isLoading: false,
+  status: statusEnum.idle,
   visibility: "all", // all, active, completed
   todos: [],
   fields: {
@@ -23,8 +30,8 @@ const mounted = async () => {
 };
 
 const fetchTodos = async () => {
-  // set the loading flag
-  store.isLoading = true;
+  // update the status
+  store.status = statusEnum.fetching
 
   // define the endpoint url & query parameters
   const endpointUrl = "https://jsonplaceholder.typicode.com/todos/";
@@ -36,12 +43,12 @@ const fetchTodos = async () => {
   const todos = await $fetch(endpointUrl, {
     query: queryParams,
   }).catch((error) => {
-    this.isError = false;
+    store.status = statusEnum.error
     throw Error(error);
   });
 
-  // reset the loading flag
-  store.isLoading = false;
+  // reset the status
+  store.status = statusEnum.idle
 
   // return the todos
   return todos;
@@ -75,6 +82,9 @@ const updateTodo = async (todo) => {
   // define the endpoint url
   const endpointUrl = "https://jsonplaceholder.typicode.com/todos/";
 
+  // update the status
+  store.status = statusEnum.updating;
+
   // make a PUT request to update the todo
   const updatedTodo = await $fetch(endpointUrl + todo.id, {
     method: "PATCH",
@@ -82,7 +92,7 @@ const updateTodo = async (todo) => {
       completed: todo.completed,
     },
   }).catch((error) => {
-    this.isError = false;
+    store.status = statusEnum.error;
     throw Error(error);
   });
 
@@ -91,6 +101,9 @@ const updateTodo = async (todo) => {
   if (todoIndex >= 0) {
     store.todos[todoIndex] = updatedTodo;
   }
+
+  // reset the status
+  store.status = statusEnum.idle;
 };
 
 // callback function which is passed to the WebflowFormComponent
@@ -126,6 +139,18 @@ const app = createApp({
   markAll,
 
   // getters
+  get isIdle() {
+    return store.status === statusEnum.idle;
+  },
+  get isFetching() {
+    return store.status === statusEnum.fetching;
+  },
+  get isUpdating() {
+    return store.status === statusEnum.updating;
+  },
+  get isError() {
+    return store.status === statusEnum.error;
+  },
   get filteredTodos() {
     return filters[store.visibility](store.todos);
   },

@@ -93,7 +93,7 @@ $ yarn run build
 
 ```html
 <script type="module">
-  import { app } from "http://localhost:3000/pages/{FILE_PATH}.js";
+  import { app } from "http://localhost:3000/src/pages/{FILE_PATH}.js";
   app.mount("#app");
 </script>
 ```
@@ -102,7 +102,7 @@ $ yarn run build
 
 ```html
 <script type="module">
-  import { app } from "https://{YOUT_PROJECT}.sse.codesandbox.io/pages/{FILE_PATH}.js";
+  import { app } from "https://{YOUT_PROJECT}.sse.codesandbox.io/src/pages/{FILE_PATH}.js";
   app.mount("#app");
 </script>
 ```

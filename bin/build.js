@@ -49,7 +49,6 @@ libraries.forEach(async (libItem) => {
     // build the library
     await build({
         configFile: false,
-        root: "src",
         build: {
             lib: libItem,
             emptyOutDir: false,

@@ -2,10 +2,10 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/alphi-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AlphiJS - Starter</title>
-    <link rel="stylesheet" href="./index.css" />
+    <title>AlphiJS - Todo List Example</title>
+    <link rel="stylesheet" href="../style.css" />
     <style>
       [v-cloak="hidden"] {
         display: none;
@@ -21,16 +21,16 @@
       <div id="app" v-scope="{}" v-on:vue:mounted="mounted">
         <section class="todoapp">
           <header class="mb-6 text-center">
-            <figure>
+            <a href="/">
               <img
-                class="mx-auto"
-                src="./assets/alphi-icon.png"
+                class="mx-auto mb-4"
+                src="../assets/alphi-headshot.png"
                 alt="Alphi logo"
                 width="92px"
               />
-            </figure>
+            </a>
             <div class="mb-6 prose">
-              <h1>AlphiJS Starter</h1>
+              <h1>Todo List Example</h1>
             </div>
 
             <div class="inline-block">
@@ -76,7 +76,7 @@
               </form>
             </div>
 
-            <!-- Ttdo's list -->
+            <!-- list -->
             <div class="card bg-base-100 shadow-xl">
               <div class="card-body p-0">
                 <div class="overflow-x-auto w-full">
@@ -154,7 +154,7 @@
 
     <!-- import the javascript and mount the app -->
     <script type="module">
-      import { app } from "./pages/index.js";
+      import { app } from "../src/pages/index.js";
       app.mount("#app");
     </script>
   </body>

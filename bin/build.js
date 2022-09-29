@@ -42,10 +42,10 @@ getPages().forEach((file) => {
     })
 })
 
-libraries.forEach(async (libItem) => {
-    // empty the output directory
-    readdirSync(outDir).forEach(f => rmSync(`${outDir}/${f}`, {recursive: true}));
+// empty the output directory
+readdirSync(outDir).forEach(f => rmSync(`${outDir}/${f}`, {recursive: true}));
 
+libraries.forEach(async (libItem) => {
     // build the library
     await build({
         configFile: false,
